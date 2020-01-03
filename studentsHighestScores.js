@@ -1,7 +1,10 @@
 /* You have an array of objects representing students test scores.
-Each result has an id value representing a student, and the score value of given test.
+Each result has an id value representing a student, and the score value of a given test.
 Log to the console the highest score of each student, the 5 highest scores they
 managed to recieve from lowest to highest and their average score out of the 5 top scores */
+
+const student1 = 1;
+const student2 = 2;
 
 const scores = [
   {id:2, score: 76},
@@ -23,9 +26,6 @@ const scores = [
   {id:2, score: 100}, //student nr2 highest score
   {id:2, score: 81},
 ];
-
-const student1 = 1;
-const student2 = 2;
 
 const getStudentHighestScore = student => {
   let studentHighestScore = 0;
@@ -66,3 +66,7 @@ const student1BestScoresAverage = student1HighestScoresSum/5;
 const student2BestScoresAverage = student2HighestScoresSum/5;
 
 console.log(`Student nr1 average score is ${student1BestScoresAverage} while Student nr2 average score is ${student2BestScoresAverage}.`);
+
+// Run the code to see the results
+
+// This code can easily be reused as a simple calculating tool for more students and more scores
