@@ -1,31 +1,15 @@
 /* You have an array of objects representing students test scores.
 Each result has an id value representing a student, and the score value of a given test.
 Log to the console the highest score of each student, the 5 highest scores they
-managed to recieve from lowest to highest and their average score out of the 5 top scores */
+managed to receive from lowest to highest and their average score out of the 5 top scores */
 
 const student1 = 1;
 const student2 = 2;
 
-const scores = [
-  {id:2, score: 76},
-  {id:1, score: 89},
-  {id:2, score: 33},
-  {id:1, score: 47},
-  {id:1, score: 75},
-  {id:2, score: 82},
-  {id:2, score: 14},
-  {id:2, score: 67},
-  {id:1, score: 85},
-  {id:1, score: 98}, //student nr1 highest score
-  {id:1, score: 94},
-  {id:1, score: 86},
-  {id:2, score: 29},
-  {id:1, score: 32},
-  {id:2, score: 66},
-  {id:1, score: 64},
-  {id:2, score: 100}, //student nr2 highest score
-  {id:2, score: 81},
-];
+const scores = [ {id:2, score: 76}, {id:1, score: 89}, {id:2, score: 33}, {id:1, score: 47},
+{id:1, score: 75}, {id:2, score: 82}, {id:2, score: 14}, {id:2, score: 67}, {id:1, score: 85},
+{id:1, score: 98}, {id:1, score: 94}, {id:1, score: 86}, {id:2, score: 29}, {id:1, score: 32},
+{id:2, score: 66}, {id:1, score: 64}, {id:2, score: 100}, {id:2, score: 81}];
 
 const getStudentHighestScore = student => {
   let studentHighestScore = 0;
