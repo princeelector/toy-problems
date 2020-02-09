@@ -26,6 +26,6 @@ const solution = A => {
 
     //console.log(unpairedInt);
     return unpairedInt;
-}
+};
 
 // Note to next Version build: not efficient in tests with large arrays

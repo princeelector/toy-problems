@@ -17,9 +17,9 @@ const encrypt = (text, n) => {
 
         splittedText.forEach((char, index) => {
             if (index % 2 !== 0) {
-            everySecondChar.push(char);
+                everySecondChar.push(char);
             } else {
-            remainingChars.push(char);
+                remainingChars.push(char);
             }
         });
 
@@ -27,15 +27,15 @@ const encrypt = (text, n) => {
         let finalText = newSplittedText.join('');
         text = finalText;
     }
-    console.log(text)
+    console.log(text);
     return text;
-  }
+};
 
 const decrypt = (encryptedText, n) => {
     if (encryptedText === null || encryptedText === '' || n <= 0) {
         return encryptedText;
     }
-    let middleIndex = Math.floor(encryptedText.length/2);
+    let middleIndex = Math.floor(encryptedText.length / 2);
 
     for (let i = 0; i < n; i++) {
         let splittedText = encryptedText.split('');
@@ -47,9 +47,9 @@ const decrypt = (encryptedText, n) => {
         let indexPosition = 1;
 
         for (let j = 0; j < everySecondChar.length; j++) {
-        remainingChars.splice(indexPosition, 0, everySecondChar[j]);
-        indexPosition += 2;
-        // console.log(remainingChars, indexPosition);
+            remainingChars.splice(indexPosition, 0, everySecondChar[j]);
+            indexPosition += 2;
+            // console.log(remainingChars, indexPosition);
         }
         // console.log(remainingChars);
         let finalText = remainingChars.join('');
@@ -57,7 +57,7 @@ const decrypt = (encryptedText, n) => {
     }
     console.log(encryptedText);
     return encryptedText;
-}
+};
 
 encrypt();
 decrypt();
