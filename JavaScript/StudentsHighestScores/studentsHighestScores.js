@@ -1,8 +1,3 @@
-/* You have an array of objects representing students test scores.
-Each result has an id value representing a student, and the score value of a given test.
-Log to the console the highest score of each student, the 5 highest scores they
-managed to receive from lowest to highest and their average score out of the 5 top scores */
-
 const student1 = 1;
 const student2 = 2;
 

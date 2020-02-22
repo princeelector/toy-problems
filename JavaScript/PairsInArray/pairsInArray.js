@@ -1,14 +1,14 @@
-const solution = A => {
+const solution = array => {
     let unpairedInt = null;
     let newArr = [];
-    //console.log(A);
+    //console.log(array);
 
-    A.forEach(element => {
+    array.forEach(element => {
         //console.log(element);
-        let elementIndex = A.indexOf(element);
+        let elementIndex = array.indexOf(element);
         //console.log(elementIndex);
         if (newArr.includes(element) === false) {
-            A.splice(elementIndex, 1);
+            array.splice(elementIndex, 1);
             //console.log(cutElement);
             newArr.push(element);
         }
@@ -19,7 +19,7 @@ const solution = A => {
     //console.log(newArr);
 
     for (let i = 0; i < newArr.length; i++) {
-        if (A.includes(newArr[i]) === false) {
+        if (array.includes(newArr[i]) === false) {
             unpairedInt = newArr[i];
         }
     }
