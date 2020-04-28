@@ -23,31 +23,23 @@ const scores = [
 ];
 
 const getStudentHighestScore = student => {
-    let studentHighestScore = 0;
-    for (let score of scores) {
-        if (score.id === student) {
-            let studentScore = score.score;
-            if (studentScore >= studentHighestScore) {
-                studentHighestScore = studentScore;
-            }
-        }
-    }
-    console.log(
-        `Student nr${student} highest score is ${studentHighestScore}.`
-    );
-    return studentHighestScore;
+    let HighestScore = 0;
+    scores.forEach(score => {
+        if (score.id === student && score.score > HighestScore)
+            HighestScore = score.score;
+    });
+    console.log(`Student nr${student} highest score is ${HighestScore}.`);
+    return HighestScore;
 };
 
 const student1HighScore = getStudentHighestScore(student1);
 const student2HighScore = getStudentHighestScore(student2);
 
 const get5HighestScores = student => {
-    let results = [];
-    for (let result of scores) {
-        if (result.id === student) {
-            results.push(result.score);
-        }
-    }
+    const results = scores
+        .filter(score => score.id === student)
+        .map(score => score.score);
+
     results.sort((a, b) => a - b);
     const highestScores = results.slice(results.length - 5, results.length);
     console.log(`Student nr${student} highest scores are ${highestScores}.`);
@@ -69,5 +61,4 @@ console.log(
 );
 
 // Run the code to see the results
-
 // This code can easily be reused as a simple calculating tool for more students and more scores
