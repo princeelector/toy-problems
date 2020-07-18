@@ -14,13 +14,10 @@ const countBits = int => {
             } else {
                 intInBinary += '0';
             }
-            // console.log(intToBinary);
         }
-        // console.log(intInBinary);
         const binaryStringReversed = intInBinary.split('');
         binaryStringReversed.reverse();
         const binaryString = binaryStringReversed.join('');
-        // console.log(binaryString);
 
         return binaryString;
     };
@@ -40,11 +37,9 @@ const countBits = int => {
         if (string === '1') {
             bitCounter += 1;
         }
-        // console.log(bitCounter);
     });
     console.log(`Number of 1's in your binary number is ${bitCounter}`);
     return bitCounter;
 };
 
-// Count bits here
 countBits();

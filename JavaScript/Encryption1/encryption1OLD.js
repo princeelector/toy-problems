@@ -32,19 +32,14 @@ const decrypt = (encryptedText, n) => {
 
     for (let i = 0; i < n; i++) {
         let splittedText = encryptedText.split('');
-        // console.log(splittedText);
         let everySecondChar = splittedText.slice(0, middleIndex);
-        // console.log(everySecondChar);
         let remainingChars = splittedText.slice(middleIndex);
-        // console.log(remainingChars);
         let indexPosition = 1;
 
         for (let j = 0; j < everySecondChar.length; j++) {
             remainingChars.splice(indexPosition, 0, everySecondChar[j]);
             indexPosition += 2;
-            // console.log(remainingChars, indexPosition);
         }
-        // console.log(remainingChars);
         let finalText = remainingChars.join('');
         encryptedText = finalText;
     }
