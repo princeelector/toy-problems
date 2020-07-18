@@ -1,65 +1,35 @@
-const rock = 'rock';
-const scissors = 'scissors';
-const paper = 'paper';
-const bomb = 'bomb';
+const userOptions = ['rock', 'paper', 'scissors', 'bomb'];
+const computerOptions = ['rock', 'paper', 'scissors'];
 
 const getUserChoice = userInput => {
-    userInput = userInput.toLowerCase();
-    if (
-        userInput === rock ||
-        userInput === paper ||
-        userInput === scissors ||
-        userInput === bomb
-    ) {
-        return userInput;
-    } else {
-        console.log('error');
-    }
+  userInput = userInput.toLowerCase();
+
+  if (userOptions.includes(userInput)) return userInput; else console.error('Bad Input');
 };
 
 const getComputerChoice = () => {
-    let randomNumber = Math.floor(Math.random() * 3);
-    switch (randomNumber) {
-        case 0:
-            return rock;
-        case 1:
-            return paper;
-        case 2:
-            return scissors;
-    }
+  const computerChoice = computerOptions[Math.floor(Math.random()*3)];
+  return computerChoice;
 };
 
 const determineWinner = (userChoice, computerChoice) => {
-    if (userChoice === computerChoice) {
-        return 'Tie...';
-    } else if (userChoice === rock && computerChoice === paper) {
-        return 'Computer wins.';
-    } else if (userChoice === rock && computerChoice === scissors) {
-        return 'User wins!';
-    } else if (userChoice === scissors && computerChoice === paper) {
-        return 'User wins!';
-    } else if (userChoice === scissors && computerChoice === rock) {
-        return 'Computer wins.';
-    } else if (userChoice === paper && computerChoice === rock) {
-        return 'User wins!';
-    } else if (userChoice === paper && computerChoice === scissors) {
-        return 'Computer wins.';
-    } else if (userChoice === bomb) {
-        return 'User wins!';
-    }
+  const computerWinConditionMet = (
+    (userChoice === 'rock' && computerChoice !== 'scissors') ||
+    (userChoice === 'scissors' && computerChoice !== 'paper') ||
+    (userChoice === 'paper' && computerChoice !== 'rock')
+  );
+
+  if (userChoice === computerChoice) return 'Tie...'; else if (computerWinConditionMet) return 'Computer wins.';
+  return 'User wins!';
 };
 
 const playGame = Choice => {
-    const userChoice = getUserChoice(Choice);
-    const computerChoice = getComputerChoice();
-    console.log(
-        `User chooses ${userChoice} : Computer chooses ${computerChoice}`
-    );
-    console.log(determineWinner(userChoice, computerChoice));
+  const userChoice = getUserChoice(Choice); const computerChoice = getComputerChoice();
+
+  console.log(`User chooses ${userChoice} : Computer chooses ${computerChoice}`);
+  console.log(determineWinner(userChoice, computerChoice));
 };
 
-/* To play the game put option of your choice as an argument for the function
-and run the code. For instance: playGame(Scissors)
-If you play again be sure to save the code before running it. */
+const userChoice = userOptions[Math.floor(Math.random()*4)];
 
-playGame();
+playGame(userChoice);

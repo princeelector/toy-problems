@@ -59,6 +59,3 @@ const student2BestScoresAverage = student2HighestScoresSum / 5;
 console.log(
     `Student nr1 average score is ${student1BestScoresAverage} while Student nr2 average score is ${student2BestScoresAverage}.`
 );
-
-// Run the code to see the results
-// This code can easily be reused as a simple calculating tool for more students and more scores
