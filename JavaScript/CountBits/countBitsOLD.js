@@ -2,7 +2,6 @@ const countBits = int => {
     const originalInteger = int;
 
     const binarize = intToBinary => {
-        // Function to binarize input. You can't use int.toString(2)
         let intInBinary = '';
 
         while (intToBinary >= 1) {
